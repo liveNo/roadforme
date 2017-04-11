@@ -1,0 +1,59 @@
+@include media(769px) {
+    .site-content {
+        @include outer-container();
+        display: block;
+        clear: both;
+    }
+    .sidebar-right {
+        .content-area {
+            @include span-columns(8,block-collapse);
+            border-right: 1px solid;
+    }
+        .widget-area {
+            @include span-columns(4,block-collapse);
+            border-left: 1px solid;
+            margin-left: -1px;
+        }
+    }
+    .sidebar-left {
+        .content-area {
+            @include span-columns(8,block-collapse);
+            float:right;
+            border-left: 1px solid;
+            margin-left: -1px;
+        }
+        .widget-area {
+            @include span-columns(4,block-collapse);
+            float: left;
+            border-right: 1px solid;
+            margin-left: 1px;
+        }
+    }
+    .page-template-page-focus {
+            .content-area {
+                @include span-columns(10);
+                @include shift(1);
+            }
+        }
+    .sidebar-right .full-width,
+    .sidebar-left .full-width,
+    .full-width {
+        .content-area {
+            @include span-columns(12 of 12);
+            @include shift(0);
+            border: none;
+        }
+    }
+}
+.site-content {
+    @include margin(0 null);
+    @include padding(0);
+}
+.page-template-elementor,
+.page-template-beaver-builder {
+    .site-content {
+        @include outer-container(100%);
+        width:100%;
+        padding: 0;
+    }
+}
